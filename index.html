@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LockedIn: study without your phone fighting you</title>
+<meta name="description" content="LockedIn is an Android focus app for students. Pick a duration, start a session, and distracting apps stay out of reach until it ends.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="#top"><i></i>LockedIn</a>
+    <nav><a href="#how">How it works</a><a href="#status">What’s built</a><a href="#roadmap">Roadmap</a><a class="btn" href="#join">Get early access</a></nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div>
+        <h1>Your phone can wait. Your exam can’t.</h1>
+        <p class="lead">LockedIn is an Android app for students. Pick how long you want to focus, start the session, and the apps that pull you away stay out of reach until the timer ends.</p>
+        <a class="btn" href="#join">Get early access</a>
+        <a class="btn ghost" href="#how">See how it works</a>
+      </div>
+
+      <div class="stage" aria-label="Interactive demo of a focus session">
+        <small>Try it. This is a demo of the idea, not the app itself.</small>
+        <div class="ring">
+          <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="track" cx="60" cy="60" r="52"/><circle class="bar" id="bar" cx="60" cy="60" r="52" stroke-dasharray="326.7" stroke-dashoffset="0"/></svg>
+          <div class="time"><div id="clock">25:00</div><span id="state">Ready</span></div>
+        </div>
+        <div class="chips" role="group" aria-label="Session length">
+          <button class="chip" data-min="0.5" aria-pressed="false">30 sec demo</button>
+          <button class="chip" data-min="25" aria-pressed="true">25 min</button>
+          <button class="chip" data-min="45" aria-pressed="false">45 min</button>
+        </div>
+        <div class="row"><button class="btn" id="go">Start focus session</button></div>
+        <ul class="apps" id="apps"></ul>
+      </div>
+    </div>
+
+    <section id="how">
+      <h2>Three steps, no setup ritual</h2>
+      <p>Starting should take seconds, because a focus tool you avoid opening doesn’t help anyone.</p>
+      <div class="grid">
+        <div class="card"><h3>Choose a duration</h3><p>Set the time you want to be left alone, from a quick revision burst to a full study block.</p></div>
+        <div class="card"><h3>Start the session</h3><p>Distracting apps are restricted while the countdown runs, and you can always see how much time is left.</p></div>
+        <div class="card"><h3>Stay reachable</h3><p>Incoming calls are meant to keep working, so focusing never means being unreachable for something important.</p></div>
+      </div>
+    </section>
+
+    <section id="status">
+      <h2>What’s built, and what isn’t yet</h2>
+      <p>LockedIn is an early prototype. Here is where things honestly stand.</p>
+      <div class="grid">
+        <div class="card"><span class="tag now">Prototype built</span><h3>Timed focus sessions</h3><p>A native Android app where you pick a duration and start a session. Tried by more than 10 early testers so far.</p></div>
+        <div class="card"><span class="tag now">Being tested</span><h3>App restriction</h3><p>The core behaviour. We’re testing it across Android versions and phone makers before promising anything absolute.</p></div>
+        <div class="card"><span class="tag next">Planned</span><h3>AI study assistant</h3><p>Explanations and revision help grounded in credible, properly licensed academic sources, with references so you can check them.</p></div>
+        <div class="card"><span class="tag later">Planned</span><h3>Study groups</h3><p>Shared focus sessions and peer accountability, so you and your friends study together.</p></div>
+        <div class="card"><span class="tag later">Planned</span><h3>Learning repository</h3><p>One place to keep and find your notes, materials and resources.</p></div>
+      </div>
+    </section>
+
+    <section id="roadmap">
+      <h2>Where we’re headed</h2>
+      <ol class="road">
+        <li><b>Make focus sessions reliable</b><span>Test on real devices, publish a support list, fix what breaks.</span></li>
+        <li><b>Learn from students</b><span>Interviews and campus pilots to see what sticks.</span></li>
+        <li><b>Prove the AI assistant, small</b><span>One narrow subject area, with sources you can trace.</span></li>
+        <li><b>Add study communities</b><span>Group sessions and a shared resource space.</span></li>
+        <li><b>Get ready to launch</b><span>Privacy and security review, pricing tests, partner pilots.</span></li>
+      </ol>
+    </section>
+
+    <div class="cta" id="join">
+      <h2>Help shape LockedIn</h2>
+      <p>Join the early tester list. Tell us what distracts you most, and we’ll tell you when the next build is ready.</p>
+      <form id="join-form" action="subscribe.php" method="post" novalidate>
+        <label class="sr" for="email">Email address</label>
+        <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@school.edu">
+        <label class="sr" for="distraction">What distracts you most?</label>
+        <select id="distraction" name="distraction">
+          <option value="">What distracts you most?</option>
+          <option>Social media</option><option>Videos</option><option>Games</option><option>Messaging</option><option>Something else</option>
+        </select>
+        <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn" type="submit">Join the list</button>
+        <p id="form-msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </main>
+
+  <footer>© 2026 LockedIn. Early prototype, Android only. Features marked planned are not yet available.</footer>
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
